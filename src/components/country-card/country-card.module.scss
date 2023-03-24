@@ -1,0 +1,55 @@
+@import '../../../styles/global.scss';
+
+.countryDetailsWrapper {
+  display: flex;
+  max-width: 90%;
+  margin: 0 auto;
+  gap: 0 100px;
+
+  .flag {
+    width: 40%;
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .countryDetails {
+    .borderCountries {
+      margin: $homepage-unit * 3 0 $homepage-unit * 2;
+
+      p,
+      button {
+        display: inline;
+      }
+
+      p {
+        margin-right: $homepage-unit;
+      }
+
+      button {
+        background: $white;
+        border: 1px solid $very-light-gray;
+        border-radius: 3px;
+        box-shadow: 0px 0px 7px 0.5px rgba(133, 133, 133, 0.5);
+        padding: 0;
+        margin-bottom: $homepage-unit;
+
+        a {
+          padding: $homepage-unit * 0.1 2 * $homepage-unit;
+          text-decoration: none;
+          color: $dark-gray;
+        }
+
+        &:not(:last-child) {
+          margin-right: $homepage-unit;
+        }
+
+        &:hover {
+          box-shadow: 0px 0px 7px 0.5px rgba(133, 133, 133, 0.75);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
