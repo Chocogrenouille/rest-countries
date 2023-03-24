@@ -1,0 +1,11 @@
+@import '../../../styles/global.scss';
+
+.countriesWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 60px;
+
+  section {
+    width: calc(25% - 180px);
+  }
+}
