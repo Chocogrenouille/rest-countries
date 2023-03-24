@@ -1,14 +1,12 @@
-import CountriesWrapper from './components/countries-wrapper/countries-wrapper'
-
+import { Route, Routes } from 'react-router-dom'
+import Country from './pages/country'
+import Home from './pages/home'
 function App() {
   return (
-    <>
-      <section>
-        <h1>Where in the world?</h1>
-        <button>Dark mode</button>
-      </section>
-      <CountriesWrapper />
-    </>
+    <Routes>
+      <Route path="/" element={<Home />}></Route>
+      <Route path="/:id" element={<Country />}></Route>
+    </Routes>
   )
 }
 

@@ -1,27 +1,17 @@
 import { useState, useEffect } from 'react'
 import SearchBar from '../search-bar/search-bar'
 import RegionFilter from '../region-filter/region-filter'
-import UseCountryAPI from '../../use-country-api'
+import GetAllCountries from './get-all-countries'
+import { countryType } from '../../../types'
 import styles from './countries-wrapper.module.scss'
+import { Link } from 'react-router-dom'
 
 export default function CountriesWrapper() {
-  const [selectedRegion, setSelectedRegion] = useState('all')
-  const allCountriesData: countryType[] = UseCountryAPI(selectedRegion)
-  const [filteredCountries, setFilteredCountries] = useState([])
-  const [searchTerm, setSearchTerm] = useState('')
+  const allCountriesData: countryType[] = GetAllCountries()
 
-  type countryType = {
-    name: {
-      common: string
-    }
-    flags: {
-      png: string
-    }
-    region: string
-    population: number
-    capital: string
-    cca2: string
-  }
+  const [filteredCountries, setFilteredCountries] = useState(allCountriesData)
+  const [selectedRegion, setSelectedRegion] = useState('all')
+  const [searchTerm, setSearchTerm] = useState('')
 
   useEffect(() => {
     if (searchTerm.length > 0) {
@@ -35,6 +25,8 @@ export default function CountriesWrapper() {
       //@ts-ignore
       setFilteredCountries(allCountriesData)
     }
+
+    setSelectedRegion('all')
   }, [searchTerm, allCountriesData])
 
   useEffect(() => {
@@ -48,9 +40,11 @@ export default function CountriesWrapper() {
       })
       //@ts-ignore
       setFilteredCountries(stuff)
+      setSearchTerm('')
     }
   }, [selectedRegion, allCountriesData])
 
+  console.log(filteredCountries)
   return (
     <>
       <div>
@@ -66,19 +60,22 @@ export default function CountriesWrapper() {
         ) : (
           <>
             {filteredCountries.map((country: countryType) => (
-              <section key={country.cca2}>
+              <section key={country.cca3}>
                 <img src={country.flags.png} alt="country flag" />
                 <h4>{country.name.common}</h4>
                 <p>
-                  <b>Population: </b> {country.population}
+                  <b>Population: </b>
+                  {country.population}
                 </p>
                 <p>
-                  <b>Region: </b> {country.region}
+                  <b>Region: </b>
+                  {country.region}
                 </p>
                 <p>
                   <b>Capital: </b>
                   {country.capital}
                 </p>
+                <Link to={`/${country.cca3}`}>See details</Link>
               </section>
             ))}
           </>

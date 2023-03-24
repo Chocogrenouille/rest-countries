@@ -8,7 +8,7 @@ export default function RegionFilter({
   return (
     <>
       <select
-        defaultValue="all"
+        defaultValue={selectedRegion}
         onChange={(e) => setSelectedRegion(e.target.value)}
       >
         <option value="all">Filter by region</option>
