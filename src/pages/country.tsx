@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
-import { Link, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import BackButton from '../components/back-button/back-button'
 import CountryCard from '../components/country-card/country-card'
+import Header from '../components/header/header'
 
 export default function Country() {
   const { id } = useParams()
@@ -17,9 +19,8 @@ export default function Country() {
 
   return (
     <>
-      <Link to="/">
-        <button>back</button>
-      </Link>
+      <Header />
+      <BackButton />
       {data.length > 0 && <CountryCard country={data[0]} />}
     </>
   )

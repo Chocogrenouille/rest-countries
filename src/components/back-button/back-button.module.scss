@@ -1,0 +1,6 @@
+@import '../../../styles/global.scss';
+
+.backButton {
+  @include button;
+  margin: 4 * $homepage-unit 0 4 * $homepage-unit 5%;
+}

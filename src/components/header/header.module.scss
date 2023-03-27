@@ -1,0 +1,24 @@
+@import '../../../styles/global.scss';
+
+.header {
+  border-bottom: 2px solid $very-light-gray;
+  padding: $homepage-unit 0;
+
+  section {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  button {
+    background-color: transparent;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+//make more general buttons styling?
