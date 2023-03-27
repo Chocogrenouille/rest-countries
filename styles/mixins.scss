@@ -1,0 +1,19 @@
+@mixin button {
+  background: $white;
+  border: 1px solid $very-light-gray;
+  border-radius: 3px;
+  box-shadow: 0px 0px 7px 0.5px rgba(133, 133, 133, 0.5);
+  padding: 0;
+  margin-bottom: $homepage-unit;
+
+  a {
+    padding: $homepage-unit * 0.1 2 * $homepage-unit;
+    text-decoration: none;
+    color: $dark-gray;
+  }
+
+  &:hover {
+    box-shadow: 0px 0px 7px 0.5px rgba(133, 133, 133, 0.75);
+    cursor: pointer;
+  }
+}

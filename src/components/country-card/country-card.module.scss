@@ -7,7 +7,8 @@
   gap: 0 100px;
 
   .flag {
-    width: 40%;
+    width: 50%;
+
     img {
       height: 100%;
       object-fit: cover;
@@ -15,8 +16,58 @@
   }
 
   .countryDetails {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      'country-name country-name'
+      'native-name top-level-domain'
+      'population currencies'
+      'region languages'
+      'sub-region .'
+      'capital .'
+      'border-countries border-countries';
+
+    h1 {
+      grid-area: country-name;
+    }
+
+    .nativeName {
+      grid-area: native-name;
+    }
+
+    .topLevelDomain {
+      grid-area: top-level-domain;
+    }
+
+    .region {
+      grid-area: region;
+    }
+
+    .subregion {
+      grid-area: sub-region;
+    }
+
+    .capital {
+      grid-area: capital;
+    }
+
+    .population {
+      grid-area: population;
+    }
+
+    .languages {
+      grid-area: languages;
+    }
+
+    .currencies {
+      grid-area: currencies;
+    }
+
     .borderCountries {
-      margin: $homepage-unit * 3 0 $homepage-unit * 2;
+      grid-area: border-countries;
+      margin: $homepage-unit * 3 0 0;
+      display: flex;
+      flex-wrap: wrap;
 
       p,
       button {
@@ -28,26 +79,10 @@
       }
 
       button {
-        background: $white;
-        border: 1px solid $very-light-gray;
-        border-radius: 3px;
-        box-shadow: 0px 0px 7px 0.5px rgba(133, 133, 133, 0.5);
-        padding: 0;
-        margin-bottom: $homepage-unit;
-
-        a {
-          padding: $homepage-unit * 0.1 2 * $homepage-unit;
-          text-decoration: none;
-          color: $dark-gray;
-        }
+        @include button;
 
         &:not(:last-child) {
           margin-right: $homepage-unit;
-        }
-
-        &:hover {
-          box-shadow: 0px 0px 7px 0.5px rgba(133, 133, 133, 0.75);
-          cursor: pointer;
         }
       }
     }
