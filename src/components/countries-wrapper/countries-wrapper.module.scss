@@ -1,11 +1,65 @@
 @import '../../../styles/global.scss';
 
+.filterSection,
 .countriesWrapper {
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
   gap: 60px;
+  max-width: 90%;
+  margin: 0 auto;
+}
 
-  section {
-    width: calc(25% - 180px);
+.filterSection {
+  padding: 2.5 * $homepage-unit 0;
+}
+
+.countriesWrapper {
+  border-radius: 5px;
+
+  .countryDetails {
+    padding: 1.5 * $homepage-unit $homepage-unit 2.5 * $homepage-unit;
+  }
+
+  section > * {
+    text-decoration: none;
+  }
+}
+
+.light {
+  background: $light-mode-very-light-gray;
+
+  .countriesWrapper {
+    section {
+      background-color: $white;
+      box-shadow: $light-mode-box-shadow;
+
+      > * {
+        color: $light-mode-very-dark-blue;
+      }
+
+      &:hover {
+        box-shadow: $light-mode-box-shadow-hover;
+      }
+    }
+  }
+}
+
+.dark {
+  background: $dark-mode-very-dark-blue;
+
+  .countriesWrapper {
+    section {
+      background-color: $dark-mode-dark-blue;
+      box-shadow: $dark-mode-box-shadow;
+
+      > * {
+        color: $white;
+      }
+
+      &:hover {
+        box-shadow: $dark-mode-box-shadow-hover;
+      }
+    }
   }
 }

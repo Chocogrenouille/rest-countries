@@ -1,0 +1,23 @@
+@import '../../../styles/global.scss';
+
+.searchBar {
+  padding: 0.8 * $homepage-unit;
+  border-radius: 5px;
+  border: none;
+  width: 40%;
+}
+
+.light {
+  box-shadow: $light-mode-box-shadow;
+  color: $light-mode-very-dark-blue;
+}
+
+.dark {
+  box-shadow: $dark-mode-box-shadow;
+  background: $dark-mode-dark-blue;
+  color: $white;
+
+  &::placeholder {
+    color: $white;
+  }
+}

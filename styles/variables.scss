@@ -3,14 +3,26 @@
 $mobile: 375px;
 $desktop: 1440px;
 
-// colors
+$light-mode-very-dark-blue: hsl(200, 15%, 8%);
+//Light Mode Text
+$light-mode-dark-gray: hsl(0, 0%, 52%);
+//Light Mode Input
+$light-mode-very-light-gray: hsl(0, 0%, 98%);
+//Light Mode Background,
 
-$dark-blue: hsl(209, 23%, 22%); //dark Mode Elements
-$very-dark-blue: hsl(207, 26%, 17%); //dark Mode-background
-$very-dark-blue: hsl(200, 15%, 8%); //Light Mode Text
-$dark-gray: hsl(0, 0%, 52%); //Light Mode Input
-$very-light-gray: hsl(0, 0%, 98%); //Light Mode Background
+$dark-mode-dark-blue: hsl(209, 23%, 22%);
+//dark Mode Elements
+$dark-mode-very-dark-blue: hsl(207, 26%, 17%);
+//dark Mode-background
+
+// shared colors
 $white: hsl(0, 0%, 100%); //dark Mode Text & Light Mode Elements
+
+$light-mode-box-shadow: 0px 0px 7px 0.5px rgba(133, 133, 133, 0.5);
+$light-mode-box-shadow-hover: 0px 0px 7px 0.5px rgba(133, 133, 133, 0.75);
+
+$dark-mode-box-shadow: 0px 0px 7px 2px rgba(0, 0, 0, 0.75);
+$dark-mode-box-shadow-hover: 0px 0px 7px 5px rgba(0, 0, 0, 0.75);
 
 // units
 

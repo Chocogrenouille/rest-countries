@@ -1,8 +1,41 @@
 @import '../../../styles/global.scss';
 
-.header {
-  border-bottom: 2px solid $very-light-gray;
+.lightHeader {
+  background-color: $white;
+  border-bottom: 2px solid $light-mode-dark-gray;
   padding: $homepage-unit 0;
+
+  section,
+  button {
+    color: $light-mode-very-dark-blue;
+  }
+
+  section {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  button {
+    background-color: transparent;
+    font-weight: bold;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.darkHeader {
+  background-color: $dark-mode-dark-blue;
+  border-bottom: 2px solid #000000;
+  padding: $homepage-unit 0;
+
+  section,
+  button {
+    color: $white;
+  }
 
   section {
     display: flex;

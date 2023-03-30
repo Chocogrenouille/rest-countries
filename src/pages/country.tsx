@@ -4,7 +4,13 @@ import BackButton from '../components/back-button/back-button'
 import CountryCard from '../components/country-card/country-card'
 import Header from '../components/header/header'
 
-export default function Country() {
+export default function Country({
+  theme,
+  setTheme,
+}: {
+  theme: string
+  setTheme: any
+}) {
   const { id } = useParams()
   const [data, setData] = useState([])
 
@@ -19,7 +25,7 @@ export default function Country() {
 
   return (
     <>
-      <Header />
+      <Header theme={theme} setTheme={setTheme} />
       <BackButton />
       {data.length > 0 && <CountryCard country={data[0]} />}
     </>

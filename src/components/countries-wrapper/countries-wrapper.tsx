@@ -6,7 +6,7 @@ import { countryType } from '../../../types'
 import styles from './countries-wrapper.module.scss'
 import { Link } from 'react-router-dom'
 
-export default function CountriesWrapper() {
+export default function CountriesWrapper({ theme }: { theme: string }) {
   const allCountriesData: countryType[] = GetAllCountries()
 
   const [filteredCountries, setFilteredCountries] = useState(allCountriesData)
@@ -44,12 +44,21 @@ export default function CountriesWrapper() {
     }
   }, [selectedRegion, allCountriesData])
 
-  console.log(filteredCountries)
+  const detectTheme = (theme: string) => {
+    if (theme === 'light') return styles.light
+    return styles.dark
+  }
+
   return (
-    <>
-      <div>
-        <SearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+    <div className={`${detectTheme(theme)}`}>
+      <div className={styles.filterSection}>
+        <SearchBar
+          theme={theme}
+          searchTerm={searchTerm}
+          setSearchTerm={setSearchTerm}
+        />
         <RegionFilter
+          theme={theme}
           selectedRegion={selectedRegion}
           setSelectedRegion={setSelectedRegion}
         />
@@ -61,26 +70,29 @@ export default function CountriesWrapper() {
           <>
             {filteredCountries.map((country: countryType) => (
               <section key={country.cca3}>
-                <img src={country.flags.png} alt="country flag" />
-                <h4>{country.name.common}</h4>
-                <p>
-                  <b>Population: </b>
-                  {country.population}
-                </p>
-                <p>
-                  <b>Region: </b>
-                  {country.region}
-                </p>
-                <p>
-                  <b>Capital: </b>
-                  {country.capital}
-                </p>
-                <Link to={`/${country.cca3}`}>See details</Link>
+                <Link to={`/${country.cca3}`}>
+                  <img src={country.flags.png} alt="country flag" />
+                  <div className={styles.countryDetails}>
+                    <h4>{country.name.common}</h4>
+                    <p>
+                      <b>Population: </b>
+                      {country.population}
+                    </p>
+                    <p>
+                      <b>Region: </b>
+                      {country.region}
+                    </p>
+                    <p>
+                      <b>Capital: </b>
+                      {country.capital}
+                    </p>
+                  </div>
+                </Link>
               </section>
             ))}
           </>
         )}
       </div>
-    </>
+    </div>
   )
 }
