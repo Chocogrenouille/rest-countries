@@ -3,4 +3,15 @@
 .backButton {
   @include button;
   margin: 4 * $homepage-unit 0 4 * $homepage-unit 5%;
+  background: var(--cardBgColor);
+  box-shadow: var(--boxShadow);
+
+  a {
+    color: var(--color);
+  }
+
+  &:hover {
+    box-shadow: var(--boxShadowHover);
+    cursor: pointer;
+  }
 }

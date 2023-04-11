@@ -23,15 +23,10 @@ export default function Country({
       })
   }, [id])
 
-  const getTheme = (theme: string) => {
-    if (theme === 'light') return styles.light
-    return styles.dark
-  }
-
   return (
-    <div className={`${getTheme(theme)}`}>
+    <div className={`${styles.countryDetailPage} ${styles[theme]}`}>
       <Header theme={theme} setTheme={setTheme} />
-      <BackButton />
+      <BackButton theme={theme} />
       {data.length > 0 && <CountryCard country={data[0]} theme={theme} />}
     </div>
   )

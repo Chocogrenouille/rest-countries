@@ -65,7 +65,6 @@ export default function CountriesWrapper({ theme }: { theme: string }) {
           <>
             {filteredCountries.map((country: countryType) => (
               <section key={country.cca3}>
-                sdfsdf
                 <Link to={`/${country.cca3}`}>
                   <img src={country.flags.png} alt="country flag" />
                   <div className={styles.countryDetails}>

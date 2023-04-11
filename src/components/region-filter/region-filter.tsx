@@ -9,16 +9,12 @@ export default function RegionFilter({
   setSelectedRegion: any
   selectedRegion: string
 }) {
-  const getTheme = (theme: string) => {
-    if (theme === 'light') return styles.light
-    return styles.dark
-  }
   return (
     <>
       <select
         defaultValue={selectedRegion}
         onChange={(e) => setSelectedRegion(e.target.value)}
-        className={`${styles.regionFilter} ${getTheme(theme)}`}
+        className={`${styles.regionFilter} ${styles[theme]}`}
       >
         <option value="all">Filter by region</option>
         <option value="Europe">Europe</option>

@@ -82,8 +82,20 @@
       button {
         @include button;
 
+        background: var(--cardBgColor);
+        box-shadow: var(--boxShadow);
+
+        a {
+          color: var(--color);
+        }
+
         &:not(:last-child) {
           margin-right: $homepage-unit;
+        }
+
+        &:hover {
+          box-shadow: var(--boxShadowHover);
+          cursor: pointer;
         }
       }
     }

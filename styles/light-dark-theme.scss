@@ -25,6 +25,10 @@ $themes: (
     darkTheme: hsl(0, 0%, 52%),
     lightTheme: hsl(0, 0%, 52%),
   ),
+  headerBorder: (
+    darkTheme: #000000,
+    lightTheme: hsl(0, 0%, 52%),
+  ),
 );
 
 @mixin styles($mode) {
