@@ -16,50 +16,23 @@
 
 .countriesWrapper {
   border-radius: 5px;
+  background-color: var(--bgColor);
 
   .countryDetails {
     padding: 1.5 * $homepage-unit $homepage-unit 2.5 * $homepage-unit;
   }
 
+  section {
+    background-color: var(--cardBgColor);
+    box-shadow: var(--boxShadow);
+
+    &:hover {
+      box-shadow: var(--boxShadowHover);
+    }
+  }
+
   section > * {
     text-decoration: none;
-  }
-}
-
-.light {
-  background: $light-mode-very-light-gray;
-
-  .countriesWrapper {
-    section {
-      background-color: $white;
-      box-shadow: $light-mode-box-shadow;
-
-      > * {
-        color: $light-mode-very-dark-blue;
-      }
-
-      &:hover {
-        box-shadow: $light-mode-box-shadow-hover;
-      }
-    }
-  }
-}
-
-.dark {
-  background: $dark-mode-very-dark-blue;
-
-  .countriesWrapper {
-    section {
-      background-color: $dark-mode-dark-blue;
-      box-shadow: $dark-mode-box-shadow;
-
-      > * {
-        color: $white;
-      }
-
-      &:hover {
-        box-shadow: $dark-mode-box-shadow-hover;
-      }
-    }
+    color: var(--color);
   }
 }

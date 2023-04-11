@@ -44,13 +44,8 @@ export default function CountriesWrapper({ theme }: { theme: string }) {
     }
   }, [selectedRegion, allCountriesData])
 
-  const detectTheme = (theme: string) => {
-    if (theme === 'light') return styles.light
-    return styles.dark
-  }
-
   return (
-    <div className={`${detectTheme(theme)}`}>
+    <div className={`${styles[theme]}`}>
       <div className={styles.filterSection}>
         <SearchBar
           theme={theme}
@@ -70,6 +65,7 @@ export default function CountriesWrapper({ theme }: { theme: string }) {
           <>
             {filteredCountries.map((country: countryType) => (
               <section key={country.cca3}>
+                sdfsdf
                 <Link to={`/${country.cca3}`}>
                   <img src={country.flags.png} alt="country flag" />
                   <div className={styles.countryDetails}>

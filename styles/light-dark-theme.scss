@@ -1,0 +1,46 @@
+@import './variables.scss';
+
+$themes: (
+  bgColor: (
+    darkTheme: hsl(207, 26%, 17%),
+    lightTheme: hsl(0, 0%, 98%),
+  ),
+  cardBgColor: (
+    darkTheme: hsl(209, 23%, 22%),
+    lightTheme: hsl(0, 0%, 100%),
+  ),
+  color: (
+    darkTheme: hsl(0, 0%, 100%),
+    lightTheme: hsl(200, 15%, 8%),
+  ),
+  boxShadow: (
+    lightTheme: 0px 0px 7px 0.5px rgba(133, 133, 133, 0.5),
+    darkTheme: 0px 0px 7px 2px rgba(0, 0, 0, 0.75),
+  ),
+  boxShadowHover: (
+    lightTheme: 0px 0px 7px 0.5px rgba(133, 133, 133, 0.75),
+    darkTheme: 0px 0px 7px 5px rgba(0, 0, 0, 0.75),
+  ),
+  inputColor: (
+    darkTheme: hsl(0, 0%, 52%),
+    lightTheme: hsl(0, 0%, 52%),
+  ),
+);
+
+@mixin styles($mode) {
+  @each $key, $map in $themes {
+    @each $prop, $color in $map {
+      @if $prop == $mode {
+        --#{$key}: #{$color};
+      }
+    }
+  }
+}
+
+.dark {
+  @include styles('darkTheme');
+}
+
+.light {
+  @include styles('lightTheme');
+}

@@ -1,0 +1,11 @@
+@import '../../../styles/global.scss';
+
+.light {
+  background-color: $light-mode-very-light-gray;
+  height: 100vh;
+}
+
+.dark {
+  background-color: $dark-mode-dark-blue;
+  height: 100vh;
+}

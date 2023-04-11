@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { Route, Routes } from 'react-router-dom'
 import { ThemeContext } from './contexts/theme-context'
-import Country from './pages/country'
+import Country from './pages/country/country'
 import Home from './pages/home'
 
 function App() {

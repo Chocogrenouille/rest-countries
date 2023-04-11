@@ -4,11 +4,13 @@ import styles from './country-card.module.scss'
 
 export default function CountryCard({
   country,
+  theme,
 }: {
   country: countryDetailsType
+  theme: string
 }) {
   return (
-    <div className={styles.countryDetailsWrapper}>
+    <div className={`${styles.countryDetailsWrapper} ${styles[theme]}`}>
       <figure className={styles.flag}>
         <img src={country.flags.png} alt="country flag" />
       </figure>
