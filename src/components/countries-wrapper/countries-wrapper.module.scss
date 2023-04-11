@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 60px;
+  gap: 60px 40px;
   max-width: 90%;
   margin: 0 auto;
 }
@@ -34,15 +34,24 @@
   section {
     background-color: var(--cardBgColor);
     box-shadow: var(--boxShadow);
+    width: calc(25% - 40px);
 
     &:hover {
       box-shadow: var(--boxShadowHover);
     }
-  }
 
-  section > * {
-    text-decoration: none;
-    color: var(--color);
+    > * {
+      text-decoration: none;
+      color: var(--color);
+    }
+
+    img {
+      width: 100%;
+    }
+
+    @include phone {
+      width: 100%;
+    }
   }
 
   .countryDetails {

@@ -56,16 +56,19 @@ export default function CountryCard({
             <span key={language}>{language}</span>
           ))}
         </p>
-        <div className={styles.borderCountries}>
-          <p>
-            <b>Border Countries: </b>
-          </p>
-          {country.borders.map((border) => (
-            <button key={border}>
-              <Link to={`/${border}`}>{border}</Link>
-            </button>
-          ))}
-        </div>
+        {country.borders && (
+          <div className={styles.borderCountries}>
+            <p>
+              <b>Border Countries: </b>
+            </p>
+            {/* check if country has any border - e.g. an island state does not have any borders */}
+            {country.borders.map((border) => (
+              <button key={border}>
+                <Link to={`/${border}`}>{border}</Link>
+              </button>
+            ))}
+          </div>
+        )}
       </section>
     </div>
   )
