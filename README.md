@@ -49,6 +49,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 ### What I learned
 
 - Implement dark mode with context API from react
+- Using Sass functions to apply dark or light mode styles automatically
 - Create dynamic routes with react router
 
 ### Continued development
