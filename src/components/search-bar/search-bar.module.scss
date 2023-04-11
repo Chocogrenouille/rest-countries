@@ -8,12 +8,9 @@
 
   box-shadow: var(--boxShadow);
   color: var(--color);
-}
-
-.dark.searchBar {
-  background: $dark-mode-dark-blue;
+  background-color: var(--cardBgColor);
 
   &::placeholder {
-    color: $white;
+    color: var(--color);
   }
 }

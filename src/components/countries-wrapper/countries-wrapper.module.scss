@@ -12,14 +12,24 @@
 
 .filterSection {
   padding: 2.5 * $homepage-unit 0;
+
+  @include phone {
+    flex-direction: column;
+    gap: 0px;
+
+    > * {
+      width: fit-content;
+    }
+
+    input {
+      width: 100%;
+      margin-bottom: 2 * $homepage-unit;
+    }
+  }
 }
 
 .countriesWrapper {
   border-radius: 5px;
-
-  .countryDetails {
-    padding: 1.5 * $homepage-unit $homepage-unit 2.5 * $homepage-unit;
-  }
 
   section {
     background-color: var(--cardBgColor);
@@ -33,5 +43,13 @@
   section > * {
     text-decoration: none;
     color: var(--color);
+  }
+
+  .countryDetails {
+    padding: 1.5 * $homepage-unit $homepage-unit 2.5 * $homepage-unit;
+
+    @include phone {
+      padding: $homepage-unit $homepage-unit 2 * $homepage-unit;
+    }
   }
 }

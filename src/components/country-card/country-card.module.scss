@@ -7,12 +7,25 @@
   gap: 0 100px;
   color: var(--color);
 
+  @include phone {
+    flex-direction: column;
+  }
+
   .flag {
     width: 50%;
+
+    @include phone {
+      width: unset;
+    }
 
     img {
       height: 100%;
       object-fit: cover;
+
+      @include phone {
+        height: unset;
+        width: 100%;
+      }
     }
   }
 
@@ -27,6 +40,25 @@
       'sub-region .'
       'capital .'
       'border-countries border-countries';
+
+    @include phone {
+      display: block;
+      margin-top: 1.5 * $homepage-unit;
+
+      .nativeName,
+      .topLevelDomain,
+      .region,
+      .subregion,
+      .population,
+      .languages,
+      .currencies {
+        margin-bottom: 0.5 * $homepage-unit;
+      }
+
+      .capital {
+        margin-bottom: 1.5 * $homepage-unit;
+      }
+    }
 
     h1 {
       grid-area: country-name;
@@ -70,6 +102,11 @@
       display: flex;
       flex-wrap: wrap;
 
+      @include phone {
+        display: block;
+        margin-bottom: 3 * $homepage-unit;
+      }
+
       p,
       button {
         display: inline;
@@ -77,6 +114,12 @@
 
       p {
         margin-right: $homepage-unit;
+
+        @include phone {
+          display: block;
+          margin-right: 0;
+          margin-bottom: $homepage-unit;
+        }
       }
 
       button {

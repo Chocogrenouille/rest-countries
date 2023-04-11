@@ -15,7 +15,7 @@ export default function CountryCard({
         <img src={country.flags.png} alt="country flag" />
       </figure>
       <section className={styles.countryDetails}>
-        <h1>{country.name.common}</h1>
+        <h2>{country.name.common}</h2>
         <p className={styles.nativeName}>
           <b>Native name: </b>
           {Object.values(country.name.nativeName).map((nativeName) => (

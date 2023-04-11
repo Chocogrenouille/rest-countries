@@ -50,7 +50,7 @@ Then crop/optimize/edit your image however you like, add it to your project, and
 
 - Implement dark mode with context API from react
 - Using Sass functions to apply dark or light mode styles automatically
-- Create dynamic routes with react router
+- Refreshen my memory of react router to create dynamic routes with react router
 
 ### Continued development
 

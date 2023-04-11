@@ -13,3 +13,9 @@
     cursor: pointer;
   }
 }
+
+@mixin phone {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}

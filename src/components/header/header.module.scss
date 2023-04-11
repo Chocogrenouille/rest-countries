@@ -8,6 +8,7 @@
   section {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     margin: 0 auto;
     max-width: 90%;
   }
@@ -20,6 +21,12 @@
   button {
     background-color: transparent;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+
+    svg {
+      padding-right: 0.5 * $homepage-unit;
+    }
 
     &:hover {
       cursor: pointer;

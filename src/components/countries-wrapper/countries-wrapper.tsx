@@ -68,7 +68,7 @@ export default function CountriesWrapper({ theme }: { theme: string }) {
                 <Link to={`/${country.cca3}`}>
                   <img src={country.flags.png} alt="country flag" />
                   <div className={styles.countryDetails}>
-                    <h4>{country.name.common}</h4>
+                    <h3>{country.name.common}</h3>
                     <p>
                       <b>Population: </b>
                       {country.population}

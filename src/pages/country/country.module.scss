@@ -3,4 +3,8 @@
 .countryDetailPage {
   background-color: var(--bgColor);
   height: 100vh;
+
+  @include phone {
+    height: unset;
+  }
 }

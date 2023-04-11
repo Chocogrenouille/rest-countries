@@ -8,10 +8,19 @@
 
   a {
     color: var(--color);
+    display: flex;
+
+    svg {
+      padding-right: 0.5 * $homepage-unit;
+    }
   }
 
   &:hover {
     box-shadow: var(--boxShadowHover);
     cursor: pointer;
+  }
+
+  @include phone {
+    margin: 2 * $homepage-unit 0 3 * $homepage-unit 5%;
   }
 }

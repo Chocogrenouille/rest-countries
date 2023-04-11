@@ -9,10 +9,6 @@ export default function SearchBar({
   setSearchTerm: any
   searchTerm: string
 }) {
-  const getTheme = (theme: string) => {
-    if (theme === 'light') return styles.light
-    return styles.dark
-  }
   return (
     <>
       <input
@@ -21,7 +17,7 @@ export default function SearchBar({
         id=""
         placeholder="search for a country"
         onChange={(event) => setSearchTerm(event.target.value)}
-        className={`${styles.searchBar} ${getTheme(theme)}`}
+        className={`${styles.searchBar} ${styles[theme]}`}
       />
     </>
   )
