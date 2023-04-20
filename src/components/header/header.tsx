@@ -12,7 +12,6 @@ export default function Header({
     setTheme(isCurrentDark ? 'light' : 'dark')
     localStorage.setItem('theme', isCurrentDark ? 'light' : 'dark')
   }
-
   return (
     <header className={`${styles.header} ${styles[theme]}`}>
       <section>

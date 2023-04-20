@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import SearchBar from '../search-bar/search-bar'
 import RegionFilter from '../region-filter/region-filter'
 import GetAllCountries from './get-all-countries'
@@ -16,47 +16,55 @@ export default function CountriesWrapper({ theme }: { theme: string }) {
   useEffect(() => {
     if (searchTerm.length > 0) {
       setFilteredCountries(
-        //@ts-ignore
         allCountriesData.filter((country: countryType) =>
           country.name.common.toLowerCase().includes(searchTerm.toLowerCase())
         )
       )
     } else {
-      //@ts-ignore
       setFilteredCountries(allCountriesData)
     }
-
     setSelectedRegion('all')
   }, [searchTerm, allCountriesData])
 
   useEffect(() => {
     if (selectedRegion === 'all') {
-      //@ts-ignore
       setFilteredCountries(allCountriesData)
       return
     } else {
       const stuff = allCountriesData.filter((country: countryType) => {
         return country.region === selectedRegion
       })
-      //@ts-ignore
+
       setFilteredCountries(stuff)
       setSearchTerm('')
     }
   }, [selectedRegion, allCountriesData])
 
+  const regionFilterMemo = useMemo(() => {
+    return (
+      <RegionFilter
+        theme={theme}
+        selectedRegion={selectedRegion}
+        setSelectedRegion={setSelectedRegion}
+      />
+    )
+  }, [theme, selectedRegion])
+
+  const SearchBarMemo = useMemo(() => {
+    return (
+      <SearchBar
+        theme={theme}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
+    )
+  }, [theme, searchTerm])
+
   return (
     <div className={`${styles[theme]}`}>
       <div className={styles.filterSection}>
-        <SearchBar
-          theme={theme}
-          searchTerm={searchTerm}
-          setSearchTerm={setSearchTerm}
-        />
-        <RegionFilter
-          theme={theme}
-          selectedRegion={selectedRegion}
-          setSelectedRegion={setSelectedRegion}
-        />
+        {SearchBarMemo}
+        {regionFilterMemo}
       </div>
       <div className={styles.countriesWrapper}>
         {filteredCountries.length === 0 ? (

@@ -15,12 +15,17 @@ export default function Country({
   const [data, setData] = useState([])
 
   useEffect(() => {
-    fetch(`https://restcountries.com/v3.1/alpha/${id}`)
+    const controller = new AbortController()
+
+    fetch(`https://restcountries.com/v3.1/alpha/${id}`, {
+      signal: controller.signal,
+    })
       .then((response) => response.json())
       .then((data) => setData(data))
       .catch((error) => {
         console.log(error)
       })
+    return () => controller.abort()
   }, [id])
 
   return (
