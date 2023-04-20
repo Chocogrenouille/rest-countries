@@ -26,17 +26,18 @@ This is a solution to the [REST Countries API with color theme switcher challeng
 
 ### Screenshot
 
-![](./screenshot.jpg)
+Overview with search & filter function of all countries:
+![](./public/overview.png)
 
-Add a screenshot of your solution. The easiest way to do this is to use Firefox to view your project, right-click the page and select "Take a Screenshot". You can choose either a full-height screenshot or a cropped one based on how long the page is. If it's very long, it might be best to crop it.
+Detailed country view in dark mode:
+![](./public/france-dark-mode.png)
 
-Alternatively, you can use a tool like [FireShot](https://getfireshot.com/) to take the screenshot. FireShot has a free option, so you don't need to purchase it.
-
-Then crop/optimize/edit your image however you like, add it to your project, and update the file path in the image above.
+Detailed country view in light mode:
+![](./public/france-light-mode.png)
 
 ### Links
 
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Live Site URL: [Check out the project](https://fastidious-pothos-a56338.netlify.app/)
 
 ## My process
 
